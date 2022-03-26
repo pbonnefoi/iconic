@@ -1,0 +1,17 @@
+uuid: a07e97fb-b465-43d5-9d42-eb785c90609f
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: icon
+label: Icon
+effects:
+  5ba94a0f-313b-44c6-8105-704b280064ed:
+    uuid: 5ba94a0f-313b-44c6-8105-704b280064ed
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 32
+      height: 32
+      crop_type: focal_point

@@ -1,0 +1,33 @@
+uuid: 860e4621-4669-438f-b097-9bfd6fe10474
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.moodboard.field_cover
+    - image.style.hero_cover
+    - taxonomy.vocabulary.moodboard
+  module:
+    - media
+    - text
+id: taxonomy_term.moodboard.default
+targetEntityType: taxonomy_term
+bundle: moodboard
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_cover:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: hero_cover
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

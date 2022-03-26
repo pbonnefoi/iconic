@@ -1,0 +1,23 @@
+uuid: cfa0b841-2557-46eb-99c2-548a5fb982ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: instant
+label: Instant
+type: 'canonical_entities:node'
+pattern: 'articles/[node:field_article_category:entity:name]/[node:title]-[node:field_watch:entity:title]'
+selection_criteria:
+  72141727-47ab-4505-b3e0-362a3a5c0d9c:
+    id: node_type
+    negate: false
+    uuid: 72141727-47ab-4505-b3e0-362a3a5c0d9c
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+      instant: instant
+selection_logic: and
+weight: -5
+relationships: {  }

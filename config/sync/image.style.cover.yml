@@ -1,0 +1,17 @@
+uuid: 7a0872fc-0cea-4aba-8c35-4410532e829a
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: cover
+label: Cover
+effects:
+  2d0374e1-8e31-4ae9-b82c-8cc778c41c17:
+    uuid: 2d0374e1-8e31-4ae9-b82c-8cc778c41c17
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1344
+      height: 672
+      crop_type: focal_point

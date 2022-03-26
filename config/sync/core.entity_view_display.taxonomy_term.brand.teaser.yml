@@ -1,0 +1,44 @@
+uuid: 676652cc-fa8a-4e41-807e-aac75a172ebd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser
+    - field.field.taxonomy_term.brand.field_logo
+    - field.field.taxonomy_term.brand.field_logo_icon
+    - image.style.icon
+    - taxonomy.vocabulary.brand
+  module:
+    - media
+    - text
+id: taxonomy_term.brand.teaser
+targetEntityType: taxonomy_term
+bundle: brand
+mode: teaser
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_logo:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: content
+      image_style: watch_front
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_logo_icon:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: icon
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

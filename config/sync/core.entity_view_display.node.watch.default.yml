@@ -1,0 +1,154 @@
+uuid: eab0eb26-df61-41ed-bd13-ad7cb00c5ee7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.watch.field_brand
+    - field.field.node.watch.field_caliber_type
+    - field.field.node.watch.field_decade
+    - field.field.node.watch.field_description
+    - field.field.node.watch.field_dial_color
+    - field.field.node.watch.field_diameter
+    - field.field.node.watch.field_material
+    - field.field.node.watch.field_price_range
+    - field.field.node.watch.field_reference
+    - field.field.node.watch.field_start_year
+    - field.field.node.watch.field_style
+    - field.field.node.watch.field_thickness
+    - field.field.node.watch.field_watch_front
+    - image.style.watch_front
+    - node.type.watch
+  module:
+    - color_field
+    - datetime
+    - media
+    - user
+id: node.watch.default
+targetEntityType: node
+bundle: watch
+mode: default
+content:
+  field_brand:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_caliber_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_decade:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_dial_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_diameter:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_material:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_price_range:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_reference:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_start_year:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_style:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_thickness:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_watch_front:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: watch_front
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  like_and_dislike:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

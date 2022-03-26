@@ -1,0 +1,23 @@
+uuid: f78930a0-b5b3-4cb8-b645-bfbacf2e38a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thickness
+    - node.type.watch
+id: node.watch.field_thickness
+field_name: field_thickness
+entity_type: node
+bundle: watch
+label: Thickness
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: !!float 20
+  prefix: ''
+  suffix: mm
+field_type: decimal

@@ -1,0 +1,23 @@
+uuid: 5500cb0e-264a-4d82-91b1-0747dbc824d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_diameter
+    - node.type.watch
+id: node.watch.field_diameter
+field_name: field_diameter
+entity_type: node
+bundle: watch
+label: Diameter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: !!float 50
+  prefix: ''
+  suffix: mm
+field_type: decimal

@@ -1,0 +1,34 @@
+uuid: 84e2edab-5769-4e59-9d1a-6f5f3d1e5db5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser
+    - field.field.taxonomy_term.moodboard.field_cover
+    - image.style.article_cover_teaser
+    - taxonomy.vocabulary.moodboard
+  module:
+    - media
+    - text
+id: taxonomy_term.moodboard.teaser
+targetEntityType: taxonomy_term
+bundle: moodboard
+mode: teaser
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_cover:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: article_cover_teaser
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

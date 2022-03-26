@@ -1,0 +1,8 @@
+uuid: 6c1dd028-ecc6-4a3e-ac0a-828288c57732
+langcode: en
+status: true
+dependencies: {  }
+name: 'Caliber Type'
+vid: caliber_type
+description: ''
+weight: 0

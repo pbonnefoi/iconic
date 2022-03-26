@@ -1,0 +1,8 @@
+uuid: 7433db98-26ac-4929-b210-bf04c45f018e
+langcode: en
+status: true
+dependencies: {  }
+name: Brand
+vid: brand
+description: ''
+weight: 0

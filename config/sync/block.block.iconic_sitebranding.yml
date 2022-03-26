@@ -1,0 +1,23 @@
+uuid: 3dfc64d1-07dc-4261-892d-bd6b92c250c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - iconic
+id: iconic_sitebranding
+theme: iconic
+region: header
+weight: -2
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: false
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

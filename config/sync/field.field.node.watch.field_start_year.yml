@@ -1,0 +1,21 @@
+uuid: d25d6a3b-f6ca-48fc-822f-4a0e618cbfc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_start_year
+    - node.type.watch
+  module:
+    - datetime
+id: node.watch.field_start_year
+field_name: field_start_year
+entity_type: node
+bundle: watch
+label: 'Start Year'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

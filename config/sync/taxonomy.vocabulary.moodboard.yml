@@ -1,0 +1,8 @@
+uuid: 382548ff-8ebe-4253-8689-71ce1d76c773
+langcode: en
+status: true
+dependencies: {  }
+name: Moodboard
+vid: moodboard
+description: ''
+weight: 0

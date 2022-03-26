@@ -1,0 +1,26 @@
+uuid: 8859c2be-eed5-417f-a440-237d91225157
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: basic_taxonomy_term
+label: 'Basic Taxonomy Term'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  0384849f-1912-40d8-acc0-ca96f496b08f:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 0384849f-1912-40d8-acc0-ca96f496b08f
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      brand: brand
+      caliber_type: caliber_type
+      material: material
+      style: style
+      tags: tags
+selection_logic: and
+weight: -5
+relationships: {  }

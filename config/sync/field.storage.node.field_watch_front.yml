@@ -1,0 +1,20 @@
+uuid: 2e511285-795b-4495-b903-834e4e06e270
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_watch_front
+field_name: field_watch_front
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

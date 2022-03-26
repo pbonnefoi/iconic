@@ -1,0 +1,20 @@
+uuid: 2ec23f51-8fcd-453e-9813-4c3d1f78dd87
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+id: node.field_dial_color
+field_name: field_dial_color
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

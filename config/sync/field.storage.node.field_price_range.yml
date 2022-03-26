@@ -1,0 +1,20 @@
+uuid: c37d7b53-7416-4ea1-ab0f-a12b05db4af8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_price_range
+field_name: field_price_range
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

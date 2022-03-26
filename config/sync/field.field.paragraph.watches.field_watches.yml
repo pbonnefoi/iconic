@@ -1,0 +1,29 @@
+uuid: 577ce465-5bd5-4682-8d32-796da16b259e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_watches
+    - node.type.watch
+    - paragraphs.paragraphs_type.watches
+id: paragraph.watches.field_watches
+field_name: field_watches
+entity_type: paragraph
+bundle: watches
+label: Watches
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      watch: watch
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

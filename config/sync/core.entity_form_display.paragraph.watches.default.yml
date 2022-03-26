@@ -1,0 +1,25 @@
+uuid: 98f49b7b-da53-45bb-9b6f-5a676952906b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.watches.field_watches
+    - paragraphs.paragraphs_type.watches
+id: paragraph.watches.default
+targetEntityType: paragraph
+bundle: watches
+mode: default
+content:
+  field_watches:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,23 @@
+uuid: 52af5fc4-5f17-4a31-865b-2cf41e38a95b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_decade
+    - node.type.watch
+id: node.watch.field_decade
+field_name: field_decade
+entity_type: node
+bundle: watch
+label: Décennie
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1900
+  max: 9990
+  prefix: ''
+  suffix: '''s'
+field_type: integer

@@ -1,0 +1,247 @@
+@charset "utf-8";
+
+@import "variables/fonts.scss";
+@import "variables/colors.scss";
+@import "variables/override.scss";
+@import "components.scss";
+@import "../node_modules/swiper/swiper.scss";
+
+.mx-xl {
+  margin: 0 3rem;
+}
+
+.px-xl {
+  padding: 0 3rem;
+}
+@media screen and (min-width: 1024px) {
+  .mx-xl {
+    margin: 0 15rem;
+  }
+
+  .px-xl {
+    padding: 0 15rem;
+  }
+}
+
+.heading-like {
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.has-text-pop {
+  color: $pop;
+}
+
+.has-background-pop {
+  background-color: $pop;
+}
+
+body.has-navbar-fixed-top {
+  padding-top: 7.75rem;
+}
+.navbar {
+  a {
+    &.navbar-burger {
+      &:hover {
+        color: $white;
+      }
+      &.is-active {
+        span {
+          &:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+          }
+          &:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+          }
+        }
+      }
+      span {
+        background-color: $white;
+        width: 30px;
+        &:nth-child(1) {
+          top: calc(50% - 10px);
+        }
+        &:nth-child(3) {
+          top: calc(50% + 9px);
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  font-family: $family-logo;
+}
+
+.watch-title {
+  height: 2.6rem;
+  overflow: hidden;
+}
+
+.mySwiper {
+  padding: 3rem 1.5rem !important;
+}
+
+.swiper {
+  box-shadow: $shadow;
+  .swiper-wrapper {
+    box-sizing: inherit;
+    .swiper-slide {
+      min-height: 100% !important;
+      height: auto !important;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  padding: 3rem 3rem !important;
+}
+
+/* Image Hover Effect */
+@media screen and (min-width: 1024px) {
+  .image-hover-effect figure figcaption::before,
+  .image-hover-effect figure figcaption::after {
+    pointer-events: none;
+  }
+
+  .image-hover-effect {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    figure {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background-color: $primary;
+      img {
+        position: relative;
+        display: block;
+        min-height: 100%;
+        max-width: 100%;
+      }
+      .image-hover-effect-center-text {
+        position: absolute;
+        bottom: 40%;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        opacity: 0;
+        -webkit-transition: opacity 0.35s;
+        transition: opacity 0.35s;
+        -webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+      }
+      .image-hover-effect-bottom-text {
+        padding: 1rem 0.25rem;
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        background-color: $white;
+        height: 7rem;
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+      }
+      &:hover {
+        .image-hover-effect-center-text {
+          opacity: 1;
+        }
+        img {
+          opacity: 0.4;
+          -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
+          -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+          transition: opacity 0.35s, transform 0.35s;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+        }
+        .image-hover-effect-bottom-text {
+          -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
+          .column:nth-child(3) {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+          }
+          .column:nth-child(2) {
+            -webkit-transition-delay: 0.15s;
+            transition-delay: 0.15s;
+          }
+          .column:nth-child(3) {
+            -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cover {
+  background-color: #000;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: stretch;
+  align-items: flex-end;
+  color: #fff;
+  overflow: hidden;
+  contain: layout paint;
+  figure {
+    &.image {
+      position: unset;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+  .cover-title {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    &:before {
+      height: 200%;
+      width: 100%;
+      -webkit-transform: translate(calc(-1 * var(--hundred-vw) / 2));
+      -moz-transform: translate(-moz-calc(-1 * var(--hundred-vw)/2));
+      transform: translate(calc(-1 * var(--hundred-vw) / 2));
+      content: "";
+      background: -webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,.8)),color-stop(50%,rgba(0,0,0,.55)),to(transparent));
+      /* background: -webkit-linear-gradient(bottom,rgba(0,0,0,.8),rgba(0,0,0,.55) 50%,transparent); */
+      background: -moz-linear-gradient(bottom,rgba(0,0,0,.8) 0,rgba(0,0,0,.55) 50%,transparent 100%);
+      background: linear-gradient(
+                      0deg
+              ,rgba(0,0,0,.8),rgba(0,0,0,.55) 50%,transparent);
+      position: absolute;
+      bottom: 0;
+      z-index: 0;
+    }
+    h1, p {
+      z-index: 1;
+      position: relative;
+    }
+  }
+}
+
+.watch-full {
+  figure, .content {
+    max-width: 40rem;
+    margin: auto;
+  }
+}
+
+.ajax-throbber {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+@import "../node_modules/bulma/bulma.sass";
+.icon-text {
+  line-height: 2rem;
+}
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+

@@ -1,0 +1,12 @@
+name: iconic
+type: theme
+'base theme': stable9
+libraries:
+  - iconic/global-styling
+core_version_requirement: ^9
+regions:
+  header: Header
+  breadcrumb: Breadcrumb
+  content_above: Content Above
+  content: Content
+  footer: Footer

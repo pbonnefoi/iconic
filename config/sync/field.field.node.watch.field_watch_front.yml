@@ -1,0 +1,29 @@
+uuid: 2ec3aecc-bf66-45b8-943d-00a0ef1ad721
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_watch_front
+    - media.type.image
+    - node.type.watch
+id: node.watch.field_watch_front
+field_name: field_watch_front
+entity_type: node
+bundle: watch
+label: 'Watch Front'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

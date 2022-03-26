@@ -1,0 +1,10 @@
+uuid: eae3b553-a3c0-4c28-a31b-ecf36b7a73c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.instant
+label: Instant
+targetEntityType: node
+cache: true

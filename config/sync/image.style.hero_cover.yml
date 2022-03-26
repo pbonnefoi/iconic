@@ -1,0 +1,17 @@
+uuid: f95dadab-64d6-4d02-a2ff-6e1387816f55
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_cover
+label: 'Hero Cover'
+effects:
+  49595b57-6905-4178-9a01-1131a293c74d:
+    uuid: 49595b57-6905-4178-9a01-1131a293c74d
+    id: focal_point_crop
+    weight: 1
+    data:
+      width: 1440
+      height: 480
+      crop_type: focal_point

@@ -1,0 +1,29 @@
+uuid: f616feff-99c4-4388-8be7-eaa821a3fc3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price_range
+    - node.type.watch
+    - taxonomy.vocabulary.price_range
+id: node.watch.field_price_range
+field_name: field_price_range
+entity_type: node
+bundle: watch
+label: 'Price Range'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      price_range: price_range
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

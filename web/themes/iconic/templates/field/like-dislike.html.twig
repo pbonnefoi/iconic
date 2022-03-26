@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a formatted like dislike field.
+ *
+ * Available variables:
+ * - like_url: like url.
+ * - dislike_url: dislike url.
+ * - likes: number of likes.
+ * - dislikes: number of dislikes.
+ * - entity_id: Id of entity(content).
+ * @ingroup themeable
+ */
+#}
+<a class="use-ajax like" href={{ like_url }}>
+    <div class="icon-text has-text-danger">
+        <span class="icon is-medium"><i class="far fa-lg fa-heart"></i></span>
+        <span class="is-size-5" id="like-{{ entity_id }}">{{ likes }}</span>
+    </div>
+</a>

@@ -1,0 +1,46 @@
+uuid: 060512eb-9377-4f91-92e3-1b8e5ca47182
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_modules
+    - node.type.instant
+    - paragraphs.paragraphs_type.hero_image
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.watches
+  module:
+    - entity_reference_revisions
+id: node.instant.field_modules
+field_name: field_modules
+entity_type: node
+bundle: instant
+label: Modules
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      hero_image: hero_image
+      image: image
+      text: text
+      watches: watches
+    negate: 0
+    target_bundles_drag_drop:
+      hero_image:
+        weight: 5
+        enabled: true
+      image:
+        weight: 6
+        enabled: true
+      text:
+        weight: 7
+        enabled: true
+      watches:
+        weight: 8
+        enabled: true
+field_type: entity_reference_revisions

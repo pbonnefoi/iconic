@@ -1,0 +1,22 @@
+uuid: 8f5503b4-57d4-406a-8e1d-ed18441b9961
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: watch
+label: Watch
+type: 'canonical_entities:node'
+pattern: '[node:field_brand:entity:name]/[node:title]-[node:field_reference]'
+selection_criteria:
+  be29e029-fa37-4967-84d8-852d0b7db386:
+    id: node_type
+    negate: false
+    uuid: be29e029-fa37-4967-84d8-852d0b7db386
+    context_mapping:
+      node: node
+    bundles:
+      watch: watch
+selection_logic: and
+weight: -5
+relationships: {  }

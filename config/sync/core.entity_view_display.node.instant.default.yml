@@ -1,0 +1,68 @@
+uuid: 9f93aef1-c9a6-4a3b-ada9-f90492bbdd5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.instant.field_cover
+    - field.field.node.instant.field_description
+    - field.field.node.instant.field_modules
+    - field.field.node.instant.field_tags
+    - field.field.node.instant.field_watch
+    - image.style.article_cover_teaser
+    - node.type.instant
+  module:
+    - entity_reference_revisions
+    - media
+    - user
+id: node.instant.default
+targetEntityType: node
+bundle: instant
+mode: default
+content:
+  field_cover:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: article_cover_teaser
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_modules:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_watch:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

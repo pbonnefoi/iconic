@@ -1,0 +1,86 @@
+uuid: 23c48761-9ee9-4721-98b3-173785b99dc1
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_moderation
+_core:
+  default_config_hash: T7gMMyFbTYLalxpIOnzJebvek2OW0b1RgLVE9I2y228
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archived
+      weight: 1
+      published: false
+      default_revision: true
+    draft:
+      label: Draft
+      weight: -3
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 0
+      published: true
+      default_revision: true
+    reread:
+      label: Reread
+      weight: -2
+      published: false
+      default_revision: false
+    valid:
+      label: Valid
+      weight: -1
+      published: false
+      default_revision: false
+  transitions:
+    archive:
+      label: Archive
+      from:
+        - published
+      to: archived
+      weight: 0
+    archived_draft:
+      label: 'Restore to Draft'
+      from:
+        - archived
+      to: draft
+      weight: 1
+    archived_published:
+      label: Restore
+      from:
+        - archived
+      to: published
+      weight: 2
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+      to: draft
+      weight: -4
+    publish:
+      label: Publish
+      from:
+        - published
+        - reread
+        - valid
+      to: published
+      weight: -1
+    reread:
+      label: Reread
+      from:
+        - draft
+      to: reread
+      weight: -3
+    valid:
+      label: Valid
+      from:
+        - reread
+      to: valid
+      weight: -2
+  entity_types: {  }
+  default_moderation_state: draft

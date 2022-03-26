@@ -1,0 +1,29 @@
+uuid: 3a1c295a-ac64-4564-94a3-1aadefc857ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_watch
+    - node.type.instant
+    - node.type.watch
+id: node.instant.field_watch
+field_name: field_watch
+entity_type: node
+bundle: instant
+label: Watch
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      watch: watch
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

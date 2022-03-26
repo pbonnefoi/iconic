@@ -1,0 +1,31 @@
+uuid: c490885a-338e-440e-a12d-5b7acaefd829
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.instant
+    - taxonomy.vocabulary.brand
+    - taxonomy.vocabulary.tags
+id: node.instant.field_tags
+field_name: field_tags
+entity_type: node
+bundle: instant
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      brand: brand
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: brand
+field_type: entity_reference

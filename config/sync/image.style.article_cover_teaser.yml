@@ -1,0 +1,17 @@
+uuid: 70cb8c49-c4a5-4c47-b808-ff62f6d8dbd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: article_cover_teaser
+label: 'Article Cover Teaser'
+effects:
+  f293bff3-d1b8-47a4-947b-68e6fa4fe7cf:
+    uuid: f293bff3-d1b8-47a4-947b-68e6fa4fe7cf
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 600
+      crop_type: focal_point

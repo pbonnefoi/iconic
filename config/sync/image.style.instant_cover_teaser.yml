@@ -1,0 +1,17 @@
+uuid: fbc92436-ccc1-4bcf-8720-f96cab20c0a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: instant_cover_teaser
+label: 'Instant Cover Teaser'
+effects:
+  9dc6c657-ce46-458e-b0f0-02949f4f0329:
+    uuid: 9dc6c657-ce46-458e-b0f0-02949f4f0329
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 500
+      crop_type: focal_point

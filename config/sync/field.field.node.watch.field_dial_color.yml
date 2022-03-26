@@ -1,0 +1,22 @@
+uuid: 79454d66-c45d-4e92-968e-a22b3c314ab7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dial_color
+    - node.type.watch
+  module:
+    - color_field
+id: node.watch.field_dial_color
+field_name: field_dial_color
+entity_type: node
+bundle: watch
+label: 'Dial Color'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

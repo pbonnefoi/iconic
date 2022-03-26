@@ -1,0 +1,17 @@
+uuid: 8e46b5df-b40f-4f21-a430-8a48021f99bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: watch_front_x2
+label: 'Watch Front x2'
+effects:
+  1c0efd47-2b0d-4215-9abc-13a6bcf78213:
+    uuid: 1c0efd47-2b0d-4215-9abc-13a6bcf78213
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 960
+      crop_type: focal_point

@@ -1,0 +1,29 @@
+uuid: 443526c2-d610-439f-9e3b-d16e176a15ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_caliber_type
+    - node.type.watch
+    - taxonomy.vocabulary.caliber_type
+id: node.watch.field_caliber_type
+field_name: field_caliber_type
+entity_type: node
+bundle: watch
+label: 'Caliber Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      caliber_type: caliber_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

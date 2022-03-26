@@ -1,0 +1,22 @@
+uuid: fc17c0b8-c54f-4d3e-a2a2-d1ef88c85276
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - iconic
+_core:
+  default_config_hash: '-Ac3ISpIT0PQ-whzD7_dw0SdKi6dAbRFNWdSjOiVDqg'
+id: iconic_messages
+theme: iconic
+region: content_above
+weight: -1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }
