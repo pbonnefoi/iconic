@@ -70,17 +70,19 @@
 <div class="swiper instantSwiper">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <div class="card instant p-4">
-        <div class="card-image pb-4">
+      <div class="card instant">
+        <div class="card-image">
           <figure class="image is-fullwidth">
             {{ content.field_cover }}
           </figure>
         </div>
-        <div class="card-content heading has-text-centered p-0">
-          <p class="subtitle has-text-black is-6">Instant</p>
-          <h2 class="title is-4 has-text-black">{{ label }}</h2>
-          <p class="subtitle has-text-black is-6">X</p>
-          <h2 class="title is-4 is-spaced has-text-black">{{ watchName }}</h2>
+        <div class="card-content p-4">
+          <div class="content heading has-text-centered">
+            <p class="article-category subtitle is-6 mb-5">Instant</p>
+            <h2 class="title is-4 has-text-black mb-5">{{ label }}</h2>
+            <p class="subtitle has-text-black is-6 mb-5">X</p>
+            <h2 class="title is-4 is-spaced has-text-black mb-5">{{ watchName }}</h2>
+          </div>
         </div>
       </div>
     </div>
@@ -89,9 +91,9 @@
     </div>
   </div>
   <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
 </div>
 <!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
   var swiper = new Swiper(".instantSwiper", {
     slidesPerView: 1,

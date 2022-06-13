@@ -23,6 +23,17 @@
   }
 }
 
+
+.subtitle {
+  &.article-category {
+    color: $gold;
+  }
+}
+
+.heading {
+  margin-bottom: 0px;
+}
+
 .heading-like {
   font-size: 11px;
   letter-spacing: 1px;
@@ -85,12 +96,25 @@ body.has-navbar-fixed-top {
 }
 
 .swiper {
-  box-shadow: $shadow;
   .swiper-wrapper {
     box-sizing: inherit;
     .swiper-slide {
       min-height: 100% !important;
       height: auto !important;
+    }
+  }
+  .swiper-pagination {
+    text-align: center;
+    .swiper-pagination-bullet {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 0.5rem;
+      display: inline-block;
+      margin: 0.5rem 0.2rem 0.2rem 0.2rem;
+      background-color: $primary_light;
+      &.swiper-pagination-bullet-active {
+        background-color: $secondary;
+      }
     }
   }
 }
@@ -244,4 +268,7 @@ body.has-navbar-fixed-top {
   line-height: 2rem;
 }
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
-
+.fa-stack {
+  width: 2em;
+  vertical-align: top;
+}

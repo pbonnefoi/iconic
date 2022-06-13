@@ -37,39 +37,6 @@
  * @see template_preprocess_field()
  */
 #}
-<section class="swiper mySwiper section">
-  <div class="swiper-wrapper">
-    {% for item in items %}
-      <div class="swiper-slide">
-          {{ item.content }}
-      </div>
-    {% endfor %}
-  </div>
-  <div class="swiper-pagination"></div>
-</section>
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    centeredSlides: true,
-    initialSlide: 0,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        initialSlide: 1,
-        spaceBetween: 40,
-      },
-      1024: {
-        slidesPerView: 3,
-        initialSlide: 1,
-        spaceBetween: 50,
-      },
-    },
-  });
-</script>
+{% for item in items %}
+  <span class="chip dial-color" style="background-color: {{ item.content }};"></span>
+{% endfor %}

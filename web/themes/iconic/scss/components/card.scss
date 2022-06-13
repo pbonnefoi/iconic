@@ -10,31 +10,61 @@
   transform: scaleX(1);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  min-height: 100%;
+  min-height: calc(100% - 1.5rem);
   &.instant {
+    &:before {
+      content: "";
+      width: calc(100% - 2rem);
+      height: calc(100% - 2rem);
+      position: absolute;
+      border: 2px solid black;
+      border-radius: 0.7rem;
+      margin-top: 1rem;
+      margin-left: 1rem;
+      z-index: 100;
+    }
+    display: flex;
+    flex-flow: column;
     .card-image {
+      &:before {
+        content: "";
+        width: calc(100% - 2rem);
+        height: calc(100% - 1rem);
+        position: absolute;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        border-right: 2px solid white;
+        border-radius: 0.7rem 0.7rem 0 0;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        z-index: 1000;
+      }
       .image {
         img {
-          border-radius: 0.5rem;
           object-fit: cover;
         }
       }
     }
     .card-content {
-      border-radius: 0.5rem;
       background-color: white;
+      display: flex;
+      flex: 1 1 auto;
+      align-items: center;
+      justify-content: center;
     }
   }
   &.article {
-    background-color: #f907fc;
-    background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);
     &.saga {
-      background-color: #7ed6df;
-      background-image: linear-gradient(315deg, #7ed6df 0%, #000000 74%);
+      background-color: #bebebe;
+      opacity: 1;
+      background: repeating-linear-gradient( 45deg, #ffffff, #ffffff 2px, #bebebe 2px, #bebebe 10px );
+      border: 1px solid $grey_light;
     }
     &.moodboard {
-      background-color: #63d471;
-      background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+      background-color: #bebebe;
+      opacity: 1;
+      background: repeating-linear-gradient( -45deg, #ffffff, #ffffff 2px, #bebebe 2px, #bebebe 10px );
+      border: 1px solid $grey_light;
     }
     position: relative;
     grid-template-areas:
@@ -82,8 +112,11 @@
         }
       }
       .image {
-        min-height: 100%;
+        height: 100%;
         img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
           border-radius: 0.5rem;
         }
       }
@@ -95,50 +128,44 @@
     }
   }
   &.watch {
-    &.acier-inoxydable {
-      background-color: #e3efe8;
-      background-image: linear-gradient(315deg, #E5E5E5 0%, #B9B9B9 74%);
-      .card-image {
-        border-image-source: linear-gradient(to left, #B9B9B9 0%, #E5E5E5 74%);
+    background-color: #bebebe;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #bebebe 4px ), repeating-linear-gradient( #ffffff55, #ffffff );
+    .chip {
+      height: 2rem;
+      width: 2rem;
+      border-radius: 1rem;
+      display: inline-block;
+      &.acier-inoxydable {
+        background-color: #e3efe8;
+        background-image: linear-gradient(315deg, #E5E5E5 0%, #B9B9B9 74%);
       }
-      .card-content {
-        border-image-source: linear-gradient(to left, #B9B9B9 0%, #E5E5E5 74%);
+      &.or-rose {
+        background-color: #e3efe8;
+        background-image: linear-gradient(315deg, #A16539 0%, #FFDCBA 74%);
       }
-    }
-    &.or-rose {
-      background-color: #e3efe8;
-      background-image: linear-gradient(315deg, #A16539 0%, #FFDCBA 74%);
-      .card-image {
-        border-image-source: linear-gradient(to left, #FFDCBA 0%, #A16539 74%);
+      &.or-jaune {
+        background-color: #fdebb7;
+        background-image: linear-gradient(315deg, #CCA65D 0%, #fde7a5 74%);
       }
-      .card-content {
-        border-image-source: linear-gradient(to left, #FFDCBA 0%, #A16539 74%);
+      &.or-blanc {
+        background-color: #e3efe8;
+        background-image: linear-gradient(315deg, #E9E7E6 0%, #C5BBB4 74%);
       }
-    }
-    &.or-jaune {
-      background-color: #e3efe8;
-      background-image: linear-gradient(315deg, #CCA65D 0%, #fde7a5 74%);
-      .card-image {
-        border-image-source: linear-gradient(to left, #fde7a5 0%, #CCA65D 74%);
+      &.platine {
+        background-color: #e3efe8;
+        background-image: linear-gradient(315deg, #E5E4E2 0%, #C7C6C4 74%);
       }
-      .card-content {
-        border-image-source: linear-gradient(to left, #fde7a5 0%, #CCA65D 74%);
-      }
-    }
-    .card-image {
-      border: 3px solid;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(to left, #b8c6db 0%, #f5f7fa 74%);
     }
     .card-content {
-      border: 3px solid;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(to left, #b8c6db 0%, #f5f7fa 74%);
-      background: rgba(255, 255, 255, 0.3)
-    }
-    .card-description {
-      height: 6rem;
-      overflow: hidden;
+      background-color: $light;
+      border-radius: 0.5rem;
+      .heading {
+        line-height: 2rem;
+      }
+      .card-description {
+        height: 6rem;
+        overflow: hidden;
+      }
     }
   }
   &:after {
@@ -156,3 +183,4 @@
     opacity: .75;
   }
 }
+

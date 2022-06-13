@@ -37,16 +37,12 @@
  * @see template_preprocess_field()
  */
 #}
-  <div class="p-0 mb-1 has-text-left">
-    {% for style in styles %}
-      <span class="fa-stack" style="vertical-align: top;">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas {{ style.icon }} fa-stack-1x fa-inverse"></i>
-      </span>
+<div class="section py-3">
+  <div class="columns is-multiline is-variable is-6 mb-6 mt-5">
+    {% for item in items %}
+      <div class="column p-4 is-one-third-widescreen is-half-desktop is-half-tablet">
+        {{ item.content }}
+      </div>
     {% endfor %}
-    <span class="is-white is-medium pl-1">
-      {% for style in styles %}
-        {{ style.label }}
-      {% endfor %}
-    </span>
   </div>
+</div>

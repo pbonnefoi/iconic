@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		"baseUrl": ".",
+		"paths": {
+			"api/*": [
+				"api/*"
+			],
+			"models/*": [
+				"models/*"
+			],
+			"repository/*": [
+				"repository/*"
+			],
+			"services/*": [
+				"services/*"
+			]
+		}
+	},
+	"exclude": [
+		"./node_modules/*"
+	]
+}
