@@ -67,16 +67,23 @@
  *
  */
 #}
-<a href="{{ url }}">
-  <div class="card article {{ articleCategory }} p-4">
-    <div class="card-image">
-      <figure class="image">
-        {{ content.field_cover }}
-      </figure>
-    </div>
-    <div class="card-content heading">
-      <p class="subtitle has-text-white is-6">{{ content.field_article_category }}</p>
-      <h2 class="title is-3 is-spaced has-text-white">{{ label }}</h2>
+<article>
+  <div class="section py-6">
+    <div class="container is-max-desktop">
+      <div class="content is-medium">
+        <h2 class="title is-2 heading">
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
+        {% if display_submitted %}
+          <footer class="node__meta heading">
+            <div{{ author_attributes.addClass('node__submitted') }}>
+              {{ date }}
+              {{ metadata }}
+            </div>
+          </footer>
+        {% endif %}
+        {{ content.body }}
+      </div>
     </div>
   </div>
-</a>
+</article>

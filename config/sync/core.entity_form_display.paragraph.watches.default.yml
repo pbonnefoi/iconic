@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.watches.field_slideshow
     - field.field.paragraph.watches.field_watches
     - paragraphs.paragraphs_type.watches
 id: paragraph.watches.default
@@ -10,9 +11,16 @@ targetEntityType: paragraph
 bundle: watches
 mode: default
 content:
+  field_slideshow:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_watches:
     type: entity_reference_autocomplete
-    weight: 0
+    weight: 1
     region: content
     settings:
       match_operator: CONTAINS

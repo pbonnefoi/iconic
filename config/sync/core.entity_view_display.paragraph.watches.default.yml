@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.watches.field_slideshow
     - field.field.paragraph.watches.field_watches
     - paragraphs.paragraphs_type.watches
 id: paragraph.watches.default
@@ -10,6 +11,16 @@ targetEntityType: paragraph
 bundle: watches
 mode: default
 content:
+  field_slideshow:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_watches:
     type: entity_reference_entity_view
     label: above

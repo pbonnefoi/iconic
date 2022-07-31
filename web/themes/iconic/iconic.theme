@@ -54,6 +54,11 @@ function iconic_preprocess_node(&$vars) {
     foreach ($watches as $watch) {
       if  ($watch instanceof Node) {
         $watchName = $watch->label();
+        $brands = $watch->get('field_brand')->referencedEntities();
+        $brand = reset($brands);
+        if  ($brand instanceof Term) {
+          $vars['brandName'] = $brand->label();
+        }
       }
     }
     $vars['watchName'] = $watchName;
@@ -106,14 +111,32 @@ function iconic_theme_suggestions_form_alter(&$suggestions, $vars) {
 }
 
 /**
+ * Implements hook_theme_suggestions_form_alter().
+ */
+function iconic_theme_suggestions_node_alter(&$suggestions, $vars) {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $vars['elements']['#node'];
+  $sanitizedViewMode = strtr($vars['elements']['#view_mode'], '.', '_');
+  if ($node->bundle() === 'article') {
+    $articleCategory = $node->get('field_article_category')->first()->get('entity')->getTarget()->getValue();
+    if ($articleCategory instanceof Term) {
+      $suggestions[] = 'node__' . $node->bundle() . '__' . humanToMachine($articleCategory->label());
+      if ($sanitizedViewMode !== 'full') {
+        $suggestions[] = 'node__' . $node->bundle() . '__' . humanToMachine($articleCategory->label()) . '__' . $sanitizedViewMode;
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_taxonomy_term_alter().
  */
 function iconic_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $vars) {
   /** @var \Drupal\taxonomy\TermInterface $term */
   $term = $vars['elements']['#taxonomy_term'];
-  $sanitized_view_mode = strtr($vars['elements']['#view_mode'], '.', '_');
+  $sanitizedViewMode = strtr($vars['elements']['#view_mode'], '.', '_');
   // Add view mode theme suggestions.
-  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitizedViewMode;
 }
 
 /**

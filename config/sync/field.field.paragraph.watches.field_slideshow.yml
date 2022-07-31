@@ -1,0 +1,23 @@
+uuid: 5ce4207e-35b0-45ef-bbd9-a73dbdc64396
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slideshow
+    - paragraphs.paragraphs_type.watches
+id: paragraph.watches.field_slideshow
+field_name: field_slideshow
+entity_type: paragraph
+bundle: watches
+label: Slideshow
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

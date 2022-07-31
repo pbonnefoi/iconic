@@ -20,6 +20,7 @@ dependencies:
     - image.style.watch_front
     - node.type.watch
   module:
+    - color_field
     - media
     - user
 id: node.watch.teaser
@@ -49,6 +50,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_dial_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 12
     region: content
   field_diameter:
     type: number_decimal
@@ -125,5 +135,4 @@ content:
     region: content
 hidden:
   field_decade: true
-  field_dial_color: true
   field_start_year: true
