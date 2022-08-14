@@ -3,8 +3,10 @@
 @import "variables/fonts.scss";
 @import "variables/colors.scss";
 @import "variables/override.scss";
-@import "components.scss";
 @import "../node_modules/swiper/swiper.scss";
+@import "../node_modules/swiper/modules/navigation/navigation.scss";
+@import "../node_modules/swiper/modules/pagination/pagination.scss";
+@import "components.scss";
 
 .mx-xl {
   margin: 0 3rem;
@@ -89,34 +91,6 @@ body.has-navbar-fixed-top {
 .watch-title {
   height: 2.6rem;
   overflow: hidden;
-}
-
-.mySwiper {
-  padding: 3rem 1.5rem !important;
-}
-
-.swiper {
-  .swiper-wrapper {
-    box-sizing: inherit;
-    .swiper-slide {
-      min-height: 100% !important;
-      height: auto !important;
-    }
-  }
-  .swiper-pagination {
-    text-align: center;
-    .swiper-pagination-bullet {
-      height: 1rem;
-      width: 1rem;
-      border-radius: 0.5rem;
-      display: inline-block;
-      margin: 0.5rem 0.2rem 0.2rem 0.2rem;
-      background-color: $primary_light;
-      &.swiper-pagination-bullet-active {
-        background-color: $secondary;
-      }
-    }
-  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -265,12 +239,20 @@ body.has-navbar-fixed-top {
 
 @import "../node_modules/bulma/bulma.sass";
 .icon-text {
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 .fa-stack {
-  width: 2em;
+  width: 1.5em;
   vertical-align: top;
+}
+
+.fa-stack-1x {
+  line-height: 1.5em;
+}
+
+.fa-stack-2x {
+  font-size: 1.5em;
 }
 
 .sliding-popup-bottom {

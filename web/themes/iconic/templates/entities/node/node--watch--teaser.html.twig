@@ -91,9 +91,9 @@
     <span class="heading-like">- {{ "Thickness" | t }} : {{ content.field_thickness }}</span>
   </div>
   <div class="card-content mx-4 my-1 p-4">
-    <div class="content is-medium">
+    <div class="content">
       <p class="card-description mb-0">{{ content.field_description }}</p>
-      <div class="is-flex is-justify-content-space-between">
+      <div class="is-flex is-justify-content-space-between px-4">
         <div class="is-flex-direction-column">
           <div class="p-0 mb-1">
             {{ content.field_dial_color }}
@@ -101,7 +101,7 @@
               <span class="chip {{ material }}"></span>
             {% endfor %}
           </div>
-          <div class="heading is-size-6">
+          <div class="heading is-size-6 mb-0">
             {{ content.field_style }}
             {{ content.field_caliber_type }}
             {{ content.field_price_range }}

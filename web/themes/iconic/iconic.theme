@@ -39,6 +39,7 @@ function iconic_preprocess_node(&$vars) {
     $vars['materials'] = $materials;
   }
   if ($node instanceof Node && $node->bundle() == 'article') {
+    $vars['createdTime'] = $node->getCreatedTime();
     $articleCategories = $node->get('field_article_category')->referencedEntities();
     $categories = [];
     foreach ($articleCategories as $articleCategory) {
@@ -120,9 +121,13 @@ function iconic_theme_suggestions_node_alter(&$suggestions, $vars) {
   if ($node->bundle() === 'article') {
     $articleCategory = $node->get('field_article_category')->first()->get('entity')->getTarget()->getValue();
     if ($articleCategory instanceof Term) {
-      $suggestions[] = 'node__' . $node->bundle() . '__' . humanToMachine($articleCategory->label());
+      $articleType = humanToMachine($articleCategory->label());
+      if ($articleType === 'paroles-de-collectionneur') {
+        $articleType = 'no_cover';
+      }
+      $suggestions[] = 'node__' . $node->bundle() . '__' . $articleType;
       if ($sanitizedViewMode !== 'full') {
-        $suggestions[] = 'node__' . $node->bundle() . '__' . humanToMachine($articleCategory->label()) . '__' . $sanitizedViewMode;
+        $suggestions[] = 'node__' . $node->bundle() . '__' . $articleType . '__' . $sanitizedViewMode;
       }
     }
   }

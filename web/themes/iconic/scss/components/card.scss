@@ -2,7 +2,6 @@
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   -moz-transition: transform .3s,-moz-transform .3s;
-  transition: transform .3s;
   transition: transform .3s,-webkit-transform .3s,-moz-transform .3s;
   will-change: transform;
   -webkit-transform: scaleX(1);
@@ -11,6 +10,7 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   min-height: calc(100% - 1.5rem);
+  aspect-ratio: 9/16;
   &.instant {
     &:before {
       content: "";
@@ -51,88 +51,103 @@
       flex: 1 1 auto;
       align-items: center;
       justify-content: center;
+      .content {
+        min-width: 25rem;
+      }
     }
   }
   &.article {
-    &.saga {
-      background-color: #bebebe;
-      opacity: 1;
-      background: repeating-linear-gradient( 45deg, #ffffff, #ffffff 2px, #bebebe 2px, #bebebe 10px );
-      border: 1px solid $grey_light;
-    }
-    &.moodboard {
-      background-color: #bebebe;
-      opacity: 1;
-      background: repeating-linear-gradient( -45deg, #ffffff, #ffffff 2px, #bebebe 2px, #bebebe 10px );
-      border: 1px solid $grey_light;
-    }
-    position: relative;
-    grid-template-areas:
-            "aside"
-            "void"
-            "child";
-    grid-template-rows: auto 1fr auto;
-    position: relative;
-    display: grid;
-    z-index: 0;
-    overflow: hidden;
-    contain: layout paint;
-    &:before {
-      content: "";
-      z-index: 1;
-      grid-area: child;
-      background: -webkit-gradient(linear,left bottom,left top,from(var(--gradient-start,rgba(0,0,0,.8))),color-stop(50%,var(--gradient-mid,rgba(0,0,0,.55))),to(var(--gradient-end,transparent)));
-      background: -webkit-linear-gradient(bottom,var(--gradient-start,rgba(0,0,0,.8)) 0,var(--gradient-mid,rgba(0,0,0,.55)) 50%,var(--gradient-end,transparent) 100%);
-      background: -moz-linear-gradient(bottom,var(--gradient-start,rgba(0,0,0,.8)) 0,var(--gradient-mid,rgba(0,0,0,.55)) 50%,var(--gradient-end,transparent) 100%);
-      background: linear-gradient(
-                      0deg
-              ,var(--gradient-start,rgba(0,0,0,.8)) 0,var(--gradient-mid,rgba(0,0,0,.55)) 50%,var(--gradient-end,transparent) 100%);
-      width: 100%;
-      height: 100%;
-      align-self: flex-end;
-      position: absolute;
-      border-bottom-left-radius: 0.5rem;
-      border-bottom-right-radius: 0.5rem;
-    }
-    .card-image {
+    &.article-with-cover {
+      &.saga {
+        background: #bebebe;
+        opacity: 1;
+        background: repeating-linear-gradient( 45deg, #ffffff, #ffffff 2px, #bebebe 2px, #bebebe 10px );
+        border: 1px solid $grey_light;
+      }
+      &.moodboard {
+        background: #bebebe;
+        opacity: 1;
+        background: repeating-linear-gradient( -45deg, #ffffff, #ffffff 2px, #bebebe 2px, #bebebe 10px );
+        border: 1px solid $grey_light;
+      }
       position: relative;
+      grid-template-areas:
+              "aside"
+              "void"
+              "child";
+      grid-template-rows: auto 1fr auto;
+      display: grid;
       z-index: 0;
-      grid-column: 1/-1;
-      grid-row: 1/-1;
-      &:first-child {
-        img {
-          border-top-left-radius: unset;
-          border-top-right-radius: unset;
-        }
-      }
-      &:last-child {
-        img {
-          border-bottom-left-radius: unset;
-          border-bottom-right-radius: unset;
-        }
-      }
-      .image {
+      overflow: hidden;
+      contain: layout paint;
+      &:before {
+        content: "";
+        z-index: 1;
+        grid-area: child;
+        background: -webkit-gradient(linear,left bottom,left top,from(var(--gradient-start,rgba(0,0,0,.8))),color-stop(50%,var(--gradient-mid,rgba(0,0,0,.55))),to(var(--gradient-end,transparent)));
+        background: -webkit-linear-gradient(bottom,var(--gradient-start,rgba(0,0,0,.8)) 0,var(--gradient-mid,rgba(0,0,0,.55)) 50%,var(--gradient-end,transparent) 100%);
+        background: -moz-linear-gradient(bottom,var(--gradient-start,rgba(0,0,0,.8)) 0,var(--gradient-mid,rgba(0,0,0,.55)) 50%,var(--gradient-end,transparent) 100%);
+        background: linear-gradient(
+                        0deg
+                ,var(--gradient-start,rgba(0,0,0,.8)) 0,var(--gradient-mid,rgba(0,0,0,.55)) 50%,var(--gradient-end,transparent) 100%);
+        width: 100%;
         height: 100%;
-        img {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-          border-radius: 0.5rem;
+        align-self: flex-end;
+        position: absolute;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+      }
+      .card-image {
+        position: relative;
+        z-index: 0;
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        &:first-child {
+          img {
+            border-top-left-radius: unset;
+            border-top-right-radius: unset;
+          }
         }
+        &:last-child {
+          img {
+            border-bottom-left-radius: unset;
+            border-bottom-right-radius: unset;
+          }
+        }
+        .image {
+          height: 100%;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+      .card-content {
+        grid-area: child;
+        z-index: 2;
+        will-change: opacity;
       }
     }
-    .card-content {
-      grid-area: child;
-      z-index: 2;
-      will-change: opacity;
+    &.article-without-cover {
+      .card-content {
+        background: linear-gradient(110deg, #fff 60%, #eee 60%);
+        border: 2px solid $pop;
+        border-radius: 0.7rem;
+        .block-title {
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+      }
     }
   }
   &.watch {
     background-color: #bebebe;
     background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #bebebe 4px ), repeating-linear-gradient( #ffffff55, #ffffff );
     .chip {
-      height: 2rem;
-      width: 2rem;
+      height: 1.5rem;
+      width: 1.5rem;
       border-radius: 1rem;
       display: inline-block;
       &.acier-inoxydable {
@@ -160,16 +175,16 @@
       background-color: $light;
       border-radius: 0.5rem;
       .heading {
-        line-height: 2rem;
+        line-height: 1.5rem;
       }
       .card-description {
-        height: 6rem;
+        position: relative;
+        height: 3rem;
         overflow: hidden;
       }
     }
   }
   &:after {
-    opacity: 1;
     background-image: url("/web/themes/iconic/images/sparkles.gif"),
     url(https://assets.codepen.io/13471/holo.png),
     linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
@@ -184,3 +199,16 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .card {
+    &.watch {
+      .card-content {
+        .card-description {
+          position: relative;
+          height: 6rem;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

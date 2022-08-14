@@ -1,0 +1,15 @@
+.article {
+  &.full {
+    &.article-without-cover {
+      .hero {
+        background: linear-gradient(110deg, #fff 60%, #eee 60%);
+        border-bottom: 2px solid $pop;
+        .block-title {
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+      }
+    }
+  }
+}
+
