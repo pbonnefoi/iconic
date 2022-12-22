@@ -8,6 +8,7 @@ dependencies:
   module:
     - node
     - user
+    - views_infinite_scroll
 _core:
   default_config_hash: XEFoA1ECJzKZN4VpnDqqRQO-oltuYdmjjvGEYDKs8uU
 id: frontpage
@@ -27,7 +28,7 @@ display:
       title: ''
       fields: {  }
       pager:
-        type: full
+        type: infinite_scroll
         options:
           offset: 0
           items_per_page: 12
@@ -36,8 +37,6 @@ display:
           tags:
             next: 'Next ›'
             previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -46,7 +45,10 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 5
+          views_infinite_scroll:
+            button_text: 'Afficher plus'
+            automatically_load_content: true
+            initially_load_all_pages: false
       exposed_form:
         type: basic
         options:
@@ -299,7 +301,18 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        matomo:
+          enabled: false
+          keyword_gets: ''
+          keyword_behavior: first
+          keyword_concat_separator: ' '
+          category_behavior: none
+          category_gets: ''
+          category_concat_separator: ' '
+          category_fallback: ''
+          category_facets: {  }
+          category_facets_concat_separator: ', '
       path: node
     cache_metadata:
       max-age: -1

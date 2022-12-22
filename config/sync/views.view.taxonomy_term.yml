@@ -8,6 +8,7 @@ dependencies:
     - node
     - taxonomy
     - user
+    - views_infinite_scroll
 _core:
   default_config_hash: YKgw0f77GEmCu6_6Om9Mbig0mON9JdfVuMxTtd0WQaI
 id: taxonomy_term
@@ -26,7 +27,7 @@ display:
     display_options:
       fields: {  }
       pager:
-        type: full
+        type: infinite_scroll
         options:
           offset: 0
           items_per_page: 12
@@ -35,8 +36,6 @@ display:
           tags:
             next: ››
             previous: ‹‹
-            first: '« First'
-            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -45,7 +44,10 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 5
+          views_infinite_scroll:
+            button_text: 'Afficher plus'
+            automatically_load_content: true
+            initially_load_all_pages: false
       exposed_form:
         type: basic
         options:
@@ -216,16 +218,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
       style:
-        type: grid
+        type: default
         options:
+          row_class: ''
+          default_row_class: true
           uses_fields: false
-          columns: 3
-          automatic_width: false
-          alignment: horizontal
-          row_class_custom: ''
-          row_class_default: false
-          col_class_custom: ''
-          col_class_default: false
       row:
         type: 'entity:node'
         options:
@@ -313,7 +310,18 @@ display:
       query:
         type: views_query
         options: {  }
-      display_extenders: {  }
+      display_extenders:
+        matomo:
+          enabled: false
+          keyword_gets: ''
+          keyword_behavior: first
+          keyword_concat_separator: ' '
+          category_behavior: none
+          category_gets: ''
+          category_concat_separator: ' '
+          category_fallback: ''
+          category_facets: {  }
+          category_facets_concat_separator: ', '
       path: taxonomy/term/%
     cache_metadata:
       max-age: -1
