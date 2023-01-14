@@ -3,7 +3,7 @@ type: theme
 'base theme': stable9
 libraries:
   - iconic/global-styling
-core_version_requirement: ^9
+core_version_requirement: ^10
 regions:
   header: Header
   breadcrumb: Breadcrumb

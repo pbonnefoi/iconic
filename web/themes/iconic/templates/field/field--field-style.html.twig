@@ -37,16 +37,15 @@
  * @see template_preprocess_field()
  */
 #}
-  <div class="p-0 has-text-left">
-    {% for style in styles %}
-      <span class="fa-stack" style="vertical-align: top;">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas {{ style.icon }} fa-stack-1x fa-inverse"></i>
-      </span>
-    {% endfor %}
-    <span class="is-white is-medium pl-1">
-      {% for style in styles %}
-        {{ style.label }}
-      {% endfor %}
+<span class="has-text-left">
+  {% for style in styles %}
+    <span class="icon is-medium has-text-black" style="vertical-align: top;">
+      <i class="fas {{ style.icon }} fa-lg"></i>
     </span>
-  </div>
+  {% endfor %}
+  <span class="capsule is-white is-size-5">
+    {% for style in styles %}
+      {{ style.label }}
+    {% endfor %}
+  </span>
+</span>

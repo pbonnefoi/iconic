@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 @import "variables/fonts.scss";
 @import "variables/colors.scss";
 @import "variables/override.scss";
@@ -53,6 +52,12 @@
 
 body.has-navbar-fixed-top {
   padding-top: 7.75rem;
+}
+a {
+  &.is-active {
+    text-decoration: underline;
+    font-weight: bold;
+  }
 }
 .navbar {
   a {
@@ -245,6 +250,8 @@ body.has-navbar-fixed-top {
 .fa-stack {
   width: 1.5em;
   vertical-align: top;
+  height: auto;
+  color: $black;
 }
 
 .fa-stack-1x {
@@ -258,4 +265,19 @@ body.has-navbar-fixed-top {
 .sliding-popup-bottom {
   width: 100%;
   background-color: $grey_light;
+}
+
+.brand-name {
+  h2 {
+    &.is-size-6 {
+      height: 3rem;
+    }
+  }
+}
+
+.capsule {
+  background: $black;
+  color: white;
+  border-radius: 1rem;
+  padding: 0 0.5rem;
 }

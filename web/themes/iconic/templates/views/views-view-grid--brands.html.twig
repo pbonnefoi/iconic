@@ -26,12 +26,12 @@
  * @ingroup themeable
  */
 #}
-{% for row in items %}
-  <div class="columns is-variable is-6 mb-6">
+<div class="columns is-multiline is-6 mb-6 is-mobile">
+  {% for row in items %}
     {% for column in row.content %}
-      <div class="column py-0 is-one-quarter">
+      <div class="column py-0 is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
         {{- column.content -}}
       </div>
     {% endfor %}
-  </div>
-{% endfor %}
+  {% endfor %}
+</div>

@@ -148,8 +148,10 @@
     .chip {
       height: 1.5rem;
       width: 1.5rem;
+      border: 1px solid $black;
       border-radius: 1rem;
-      display: inline-block;
+      display: inline-flex;
+      vertical-align: text-bottom;
       &.acier-inoxydable {
         background-color: #e3efe8;
         background-image: linear-gradient(315deg, #E5E5E5 0%, #B9B9B9 74%);
@@ -172,7 +174,7 @@
       }
     }
     .card-content {
-      background-color: $light;
+      background-color: $white;
       border-radius: 0.5rem;
       .heading {
         line-height: 1.5rem;
