@@ -37,15 +37,13 @@
  * @see template_preprocess_field()
  */
 #}
-<span class="has-text-left">
-  {% for style in styles %}
-    <span class="icon is-medium has-text-black" style="vertical-align: top;">
-      <i class="fas {{ style.icon }} fa-lg"></i>
+<span class="capsule icon-text has-text-grey-dark mr-2 mb-2 is-flex is-align-items-center flex-wrap">
+  {% for icon in icons %}
+    <span class="icon is-medium">
+      <i class="{{ icon }} fas fa-lg"></i>
     </span>
   {% endfor %}
-  <span class="capsule is-white is-size-5">
-    {% for style in styles %}
-      {{ style.label }}
-    {% endfor %}
+  <span class="heading-like is-size-5">
+    {{ labels|join(' / ') }}
   </span>
 </span>

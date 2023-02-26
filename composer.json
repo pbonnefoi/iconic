@@ -29,6 +29,7 @@
         "drupal/core-project-message": "^10.0",
         "drupal/core-recommended": "^10.0",
         "drupal/entity_browser": "^2.6",
+        "drupal/entity_clone": "^2.0@alpha",
         "drupal/eu_cookie_compliance": "^1.19",
         "drupal/field_group": "^3.2",
         "drupal/focal_point": "^2.0@alpha",
@@ -66,6 +67,9 @@
         "patches": {
           "drupal/subrequests": {
             "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
+          },
+          "drupal/core": {
+            "Call to a member function transformDimensions() on null in template_preprocess": "https://www.drupal.org/files/issues/2022-07-28/2957368-40.patch"
           }
         },
         "drupal-scaffold": {

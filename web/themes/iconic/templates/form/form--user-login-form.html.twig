@@ -10,12 +10,12 @@
  * @see template_preprocess_form()
  */
 #}
-{%
-  set classes = [
-    'field',
-    'is-grouped',
-  ]
-%}
-<form{{ attributes.addClass(classes) }}>
-  {{ children }}
-</form>
+<div class="section py-6">
+  <div class="container is-max-desktop">
+    <div class="content is-medium">
+      <form{{ attributes }}>
+        {{ children }}
+      </form>
+    </div>
+  </div>
+</div>

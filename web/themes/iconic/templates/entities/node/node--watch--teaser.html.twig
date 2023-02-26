@@ -67,7 +67,7 @@
  *
  */
 #}
-<div class="card watch {{ materials | join(', ') }}">
+<div class="card watch is-flex is-flex-direction-column">
   <div class="is-flex is-justify-content-space-between">
     <div class="px-4 pt-4 pb-1 has-text-left heading has-text-primary is-align-self-flex-start">
       <p class="m-0">{{ content.field_brand }}</p>
@@ -82,38 +82,29 @@
     </div>
   </div>
   <div class="card-image">
-    <figure class="image is-5by4">
+    <figure class="image">
       {{ content.field_watch_front }}
     </figure>
   </div>
-  <div class="card-content mx-4 my-2 p-0 text-align-center">
-    <span class="heading-like">{{ "Width" | t }} : {{ content.field_diameter }}</span>
-    <span class="heading-like">- {{ "Thickness" | t }} : {{ content.field_thickness }}</span>
-  </div>
-  <div class="card-content mx-4 my-1 p-4">
-    <div class="content">
-      <p class="card-description mb-0">{{ content.field_description }}</p>
-      <div class="is-flex is-justify-content-space-between px-4">
-        <div class="is-flex-direction-column">
-          <div class="p-0 mb-1">
-            {{ content.field_dial_color }}
-            {% for material in materials %}
-              <span class="chip {{ material }}"></span>
-            {% endfor %}
-          </div>
-          <div class="heading is-size-6 mb-0">
-            {{ content.field_style }}
-            {{ content.field_caliber_type }}
-            {{ content.field_price_range }}
-          </div>
-        </div>
-        <div class="is-align-self-flex-end">
-          {# content.like_and_dislike #}
-        </div>
+  <div class="is-flex is-flex-direction-column is-flex-grow-1">
+    <div class="card-content mx-4 my-2 p-0 text-align-center watch-size">
+      <span class="heading-like">{{ "Width" | t }} : {{ content.field_diameter }}</span>
+      <span class="heading-like">- {{ "Thickness" | t }} : {{ content.field_thickness }}</span>
+    </div>
+    <div class="card-content mx-4 my-1 p-4 watch-features is-flex-grow-1">
+      <div class="is-flex is-flex-wrap-wrap">
+        {{ content.field_dial_color }}
+        {% for material in materials %}
+          <span class="chip mr-2 mb-2 {{ material }}"></span>
+        {% endfor %}
+        {{ content.field_style }}
+        {{ content.field_caliber_type }}
+        {{ content.field_price_range }}
+        {# content.like_and_dislike #}
       </div>
     </div>
-  </div>
-  <div class="px-4 text-align-center">
-    <span class="heading-like">{{ "Reference" | t }}: {{ content.field_reference }}</span>
+    <div class="px-4 text-align-center watch-ref">
+      <span class="heading-like">{{ "Reference" | t }}: {{ content.field_reference }}</span>
+    </div>
   </div>
 </div>

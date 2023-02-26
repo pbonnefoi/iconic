@@ -1,0 +1,11 @@
+.media-image {
+  position: relative;
+  .credits {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    right: 0.5rem;
+    font-size: 0.75rem;
+    opacity: 0.6;
+  }
+}

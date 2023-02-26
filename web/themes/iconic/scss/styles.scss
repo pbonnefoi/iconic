@@ -2,6 +2,8 @@
 @import "variables/fonts.scss";
 @import "variables/colors.scss";
 @import "variables/override.scss";
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 @import "../node_modules/swiper/swiper.scss";
 @import "../node_modules/swiper/modules/navigation/navigation.scss";
 @import "../node_modules/swiper/modules/pagination/pagination.scss";
@@ -24,6 +26,19 @@
   }
 }
 
+.is-size-0 {
+  font-size: 6rem;
+}
+
+.stroke {
+  color: black;
+  text-shadow:
+    1px  1px 0 #fff,
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+    1px  1px 0 #fff;
+}
 
 .subtitle {
   &.article-category {
@@ -31,14 +46,10 @@
   }
 }
 
-.heading {
-  margin-bottom: 0px;
-}
-
 .heading-like {
   font-size: 11px;
   letter-spacing: 1px;
-  margin-bottom: 5px;
+  margin-bottom: 0;
   text-transform: uppercase;
 }
 
@@ -242,11 +253,6 @@ a {
   max-height: 24px;
 }
 
-@import "../node_modules/bulma/bulma.sass";
-.icon-text {
-  line-height: 1.5rem;
-}
-@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 .fa-stack {
   width: 1.5em;
   vertical-align: top;
@@ -276,8 +282,56 @@ a {
 }
 
 .capsule {
-  background: $black;
-  color: white;
   border-radius: 1rem;
+  border: 1px solid $grey-dark;
   padding: 0 0.5rem;
+}
+
+.block-local-tasks-block {
+  ul {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    top: auto;
+    width: auto;
+    background-color: $primary;
+    z-index: 1000;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 0.5rem;
+      position: relative;
+      margin: 0;
+      a {
+        color: $white;
+        padding: 0.5rem;
+        display: block;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.radius {
+  img {
+    border-radius: 1rem;
+  }
+}
+
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+  }
 }

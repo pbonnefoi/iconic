@@ -13,5 +13,12 @@
  */
 #}
 {% if content %}
-  {{ content }}
+  <div class="media-image">
+    {{ content.field_media_image }}
+    {% if media.field_credits.value %}
+      <div class="credits has-text-grey-light">
+        © {{ content.field_credits }}
+      </div>
+    {% endif %}
+  </div>
 {% endif %}

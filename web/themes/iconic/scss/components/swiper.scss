@@ -1,83 +1,13 @@
-.swiper {
-  width: 100%;
-  height: 100%;
-  .swiper-wrapper {
-    box-sizing: inherit;
-    .swiper-slide {
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      align-items: flex-start;
-      min-height: 100% !important;
-      height: auto !important;
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-  .swiper-pagination {
-    text-align: center;
-    .swiper-pagination-bullet {
-      height: 1rem;
-      width: 1rem;
-      border-radius: 0.5rem;
-      display: inline-block;
-      margin: 0.5rem 0.2rem 0.2rem 0.2rem;
-      background-color: $primary_light;
-      &.swiper-pagination-bullet-active {
-         background-color: $secondary;
-      }
-    }
-  }
-  .swiper-button-next, .swiper-button-prev {
-    top: 84% !important;
-    &:after {
-      font-size: 1.5rem !important;
-      color: black;
-    }
-  }
-  .swiper-button-next {
-    right: 17px !important;
-    &:after {
-      -webkit-animation: rightarrow 0.6s infinite alternate ease-in-out;
-    }
-  }
-  .swiper-button-prev {
-    left: 17px !important;
-    &:after {
-      -webkit-animation: leftarrow 0.6s infinite alternate ease-in-out;
-    }
-  }
-  .swiper-button-disabled {
-    display: none;
-  }
-  &.instantSwiper {
-    .swiper-button-next {
-      top: 84% !important;
-      background: $black;
-      &:after {
-        font-size: 1.5rem !important;
-        color: white;
-      }
-    }
+.swiper-button-prev,
+.swiper-button-next {
+  background: white;
+  border-radius: 1rem;
+  color: $grey-dark;
+  &:after {
+    font-size: initial;
   }
 }
 
-@-webkit-keyframes rightarrow {
-  0% { -webkit-transform: translateX(0); opacity: 0.4 }
-  100% { -webkit-transform: translateX(0.3em); opacity: 0.9 }
-}
-
-@-webkit-keyframes leftarrow {
-  0% { -webkit-transform: translateX(0); opacity: 0.4 }
-  100% { -webkit-transform: translateX(-0.3em); opacity: 0.9 }
-}
-
-.mySwiper {
-  padding: 3rem 1.5rem !important;
+.instantSwiper {
+  border-radius: 1rem;
 }

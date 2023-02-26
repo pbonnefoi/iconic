@@ -1,0 +1,35 @@
+iconic.mobile:
+  label: Mobile
+  mediaQuery: 'all and (max-width: 768px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+iconic.tablet:
+  label: Tablet
+  mediaQuery: 'all and (min-width: 769px) and (max-width: 1023px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+iconic.desktop:
+  label: Desktop
+  mediaQuery: 'all and (min-width: 1024px) and (max-width: 1215px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+iconic.widescreen:
+  label: Widescreen
+  mediaQuery: 'all and (min-width: 1216px) and (max-width: 1407px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+iconic.fullhd:
+  label: FullHD
+  mediaQuery: 'all and (min-width: 1408px)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 2x

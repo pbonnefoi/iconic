@@ -39,11 +39,18 @@
  */
 #}
 {% block paragraph %}
-  <div class="container">
-    <figure class="image">
-      {% block content %}
-        {{ content }}
-      {% endblock %}
-    </figure>
+  <div class="section py-5 px-0">
+    <div class="container has-background-black">
+        {% block content %}
+          <div class="columns is-vcentered is-desktop">
+            <div class="column p-6">
+              {{ content.field_watch_left }}
+            </div>
+            <div class="column p-6">
+              {{ content.field_watch_right }}
+            </div>
+          </div>
+        {% endblock %}
+    </div>
   </div>
 {% endblock paragraph %}

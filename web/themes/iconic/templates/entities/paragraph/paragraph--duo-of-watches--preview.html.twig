@@ -39,11 +39,16 @@
  */
 #}
 {% block paragraph %}
-  <div class="container">
-    <figure class="image">
-      {% block content %}
-        {{ content }}
-      {% endblock %}
-    </figure>
-  </div>
+  {% block content %}
+    <div class="card-image">
+      <div class="columns is-mobile p-4">
+        <div class="column py-0 pl-0 pr-2">
+          {{ content.field_watch_left }}
+        </div>
+        <div class="column py-0 pr-0 pl-2">
+          {{ content.field_watch_right }}
+        </div>
+      </div>
+    </div>
+  {% endblock %}
 {% endblock paragraph %}

@@ -67,28 +67,6 @@
  *
  */
 #}
-<article class="article full article-with-cover">
-  {{ content.field_header }}
-  <div class="section py-6">
-    <div class="container is-max-desktop">
-      <div class="content is-large">
-        <h2 class="title is-2 heading">
-          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        </h2>
-        {% if display_submitted %}
-          <footer class="node__meta heading">
-            <div{{ author_attributes.addClass('node__submitted') }}>
-              {{ date }}
-              {{ metadata }}
-            </div>
-          </footer>
-        {% endif %}
-        <p>{{ content.field_description }}</p>
-      </div>
-    </div>
-  </div>
-
-  {{ content.field_modules }}
-
-
-</article>
+<figure class="image radius">
+  {{ content.field_watch_front }}
+</figure>
