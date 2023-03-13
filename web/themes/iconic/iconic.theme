@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Render\Element;
@@ -35,7 +36,11 @@ function iconic_preprocess_node(&$vars) {
     $materials = [];
     foreach ($fieldMaterials as $material) {
       if  ($material instanceof Term) {
-        $materials[] = humanToMachine($material->label());
+        $materialName = $material->label();
+        $materials[] = [
+          'name' => $materialName,
+          'machineName' => humanToMachine($material->label()),
+        ];
       }
     }
     $vars['materials'] = $materials;
@@ -160,15 +165,21 @@ function iconic_theme_suggestions_taxonomy_term_alter(array &$suggestions, array
  * Implements hook_theme_suggestions_field_alter().
  */
 function iconic_theme_suggestions_field_alter(&$suggestions, $vars) {
+  $viewMode = &$vars['element']['#view_mode'];
   $fieldName = &$vars['element']['#field_name'];
-  if ($fieldName == 'field_watches') {
-    $paragraph = &$vars['element']['#object'];
-    if ($paragraph instanceof Paragraph) {
-      if ($paragraph->bundle() == 'watches' && $paragraph->hasField('field_slideshow') && $paragraph->field_slideshow->value === true) {
-        $suggestions[] = 'field__' . $fieldName . '__slideshow';
-      }
-      else {
-        $suggestions[] = 'field__' . $fieldName . '__grid';
+  $entity = &$vars['element']['#object'];
+  if ($entity instanceof ContentEntityBase) {
+    $entityTypeId = $entity->getEntityTypeId();
+    $entityBundle = $entity->bundle();
+    $suggestions[] = 'field__' . $entityTypeId . '__' . $fieldName . '__' . $entityBundle . '__' . $viewMode;
+    if ($fieldName == 'field_watches') {
+      if ($entity instanceof Paragraph) {
+        if ($entityBundle == 'watches' && $entity->hasField('field_slideshow') && $entity->field_slideshow->value === true) {
+          $suggestions[] = 'field__' . $fieldName . '__slideshow';
+        }
+        else {
+          $suggestions[] = 'field__' . $fieldName . '__grid';
+        }
       }
     }
   }

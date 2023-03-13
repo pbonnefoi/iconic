@@ -100,33 +100,6 @@
   &.watch {
     background-color: #bebebe;
     background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #bebebe 4px ), repeating-linear-gradient( #ffffff55, #ffffff );
-    .chip {
-      height: 32px;
-      width: 32px;
-      border-radius: 1rem;
-      vertical-align: text-bottom;
-      flex-basis: auto;
-      &.acier-inoxydable {
-        background-color: #e3efe8;
-        background-image: linear-gradient(315deg, #E5E5E5 0%, #B9B9B9 74%);
-      }
-      &.or-rose {
-        background-color: #e3efe8;
-        background-image: linear-gradient(315deg, #A16539 0%, #FFDCBA 74%);
-      }
-      &.or-jaune {
-        background-color: #fdebb7;
-        background-image: linear-gradient(315deg, #CCA65D 0%, #fde7a5 74%);
-      }
-      &.or-blanc {
-        background-color: #e3efe8;
-        background-image: linear-gradient(315deg, #E9E7E6 0%, #C5BBB4 74%);
-      }
-      &.platine {
-        background-color: #e3efe8;
-        background-image: linear-gradient(315deg, #E5E4E2 0%, #C7C6C4 74%);
-      }
-    }
     .card-content {
       background-color: $white;
       border-radius: 0.5rem;

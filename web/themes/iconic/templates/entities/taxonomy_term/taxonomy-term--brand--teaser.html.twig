@@ -23,19 +23,8 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-{%
-  set classes = [
-    'taxonomy-term',
-    'vocabulary-' ~ term.bundle|clean_class,
-  ]
-%}
-<div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
-  {% if name and not page %}
-    <div class="brand-name px-4 pt-4 pb-1 has-text-left heading has-text-primary is-align-self-flex-start">
-      <h2 class="is-size-6"><a href="{{ url }}">{{ name }}</a></h2>
-    </div>
-  {% endif %}
-  <figure class="image">
+<a href="{{ url }}">
+  <figure class="image radius">
     {{ content.field_logo }}
   </figure>
-</div>
+</a>

@@ -67,63 +67,42 @@
  *
  */
 #}
-<div class="container pt-3 pb-6">
-  <div class="columns is-centered">
-    <div class="column is-4">
-      <div class="card watch {{ materials }}">
-        <div class="is-flex is-justify-content-space-between">
-          <div class="px-4 pt-4 pb-1 has-text-left heading has-text-primary is-align-self-flex-start">
-            <p class="m-0">{{ content.field_brand }}</p>
-            <h2 class="title is-size-5">{{ label }}</h2>
-          </div>
-          <div class="px-4 pt-4 pb-1 has-text-left heading has-text-primary is-align-self-flex-end">
-            <figure class="image is-32x32">
-              {% if brand_logo_icon %}
-                {{ brand_logo_icon }}
-              {% endif %}
-            </figure>
-          </div>
+<div class="section pt-0 pb-5 px-0 has-background-white">
+  <div class="container">
+    {% block content %}
+      <div class="columns is-desktop is-centered p-0 m-0">
+        <div class="column is-2 p-0 m-0">
+          <div class="brand-logo">{{ content.field_brand }}</div>
         </div>
-        <div class="card-image">
-          <figure class="image">
+      </div>
+      <div class="columns is-desktop pb-6">
+        <div class="column px-6">
+          <figure class="image radius has-shadow">
             {{ content.field_watch_front }}
           </figure>
         </div>
-        <nav class="level mb-1">
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="heading">{{ "Width" | t }} : {{ content.field_diameter }}</p>
-            </div>
-          </div>
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="heading">{{ "Thickness" | t }} : {{ content.field_thickness }}</p>
-            </div>
-          </div>
-        </nav>
-        <div class="card-content mx-4 my-1 px-4 py-1">
+        <div class="column px-6">
           <div class="content">
-            <p class="card-description">{{ content.field_description }}</p>
-            <div class="is-flex is-justify-content-space-between">
-              <div class="is-flex-direction-column heading is-size-6">
-                {{ content.field_style }}
-                {{ content.field_caliber_type }}
-                {{ content.field_price_range }}
-              </div>
-              <div class="is-align-self-flex-end">
-                {# content.like_and_dislike #}
-              </div>
+            <h2 class="title is-size-2">{{ label }}</h2>
+            <div class="title is-size-4">{{ content.field_reference }}</div>
+            <div class="my-1 watch-features">
+              <div class="is-flex is-align-items-center mb-2"><span class="heading is-size-6">{{ "Width" | t }} : {{ content.field_diameter }}</div>
+              <div class="is-flex is-align-items-center mb-2"><span class="heading is-size-6">{{ "Thickness" | t }} : {{ content.field_thickness }}</div>
+              {{ content.field_waterproofing }}
+              <div class="is-flex is-align-items-center"><span class="heading is-size-6 pr-2">{{ "Dial color" | t }} : </span>{{ content.field_dial_color }}</div>
+              {% for material in materials %}
+                <div class="is-flex is-align-items-center"><span class="heading is-size-6 pr-2">{{ "Material(s)" | t }} : {{ material.name }}</span> <span class="chip mr-2 mb-2 {{ material.machineName }}"></span></div>
+              {% endfor %}
+              {{ content.field_style }}
+              {{ content.field_genre }}
+              {{ content.field_caliber_type }}
+              {{ content.field_calibre }}
+              {{ content.field_price_range }}
+              {# content.like_and_dislike #}
             </div>
           </div>
         </div>
-        <nav class="level is-mobile">
-          <div class="level-item has-text-centered">
-            <div>
-              <p class="heading">{{ "Reference" | t }}: {{ content.field_reference }}</p>
-            </div>
-          </div>
-        </nav>
       </div>
-    </div>
+    {% endblock %}
   </div>
 </div>

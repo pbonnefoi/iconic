@@ -67,44 +67,46 @@
  *
  */
 #}
-<div class="card watch is-flex is-flex-direction-column">
-  <div class="is-flex is-justify-content-space-between">
-    <div class="px-4 pt-4 pb-1 has-text-left heading has-text-primary is-align-self-flex-start">
-      <p class="m-0">{{ content.field_brand }}</p>
-      <h2 class="title is-size-5 watch-title">{{ label }}</h2>
-    </div>
-    <div class="px-4 pt-4 pb-1 has-text-left heading is-align-self-flex-start">
-      <figure class="image is-32x32">
-        {% if brand_logo_icon %}
-          {{ brand_logo_icon }}
-        {% endif %}
-      </figure>
-    </div>
-  </div>
-  <div class="card-image">
-    <figure class="image">
-      {{ content.field_watch_front }}
-    </figure>
-  </div>
-  <div class="is-flex is-flex-direction-column is-flex-grow-1">
-    <div class="card-content mx-4 my-2 p-0 text-align-center watch-size">
-      <span class="heading-like">{{ "Width" | t }} : {{ content.field_diameter }}</span>
-      <span class="heading-like">- {{ "Thickness" | t }} : {{ content.field_thickness }}</span>
-    </div>
-    <div class="card-content mx-4 my-1 p-4 watch-features is-flex-grow-1">
-      <div class="is-flex is-flex-wrap-wrap">
-        {{ content.field_dial_color }}
-        {% for material in materials %}
-          <span class="chip mr-2 mb-2 {{ material }}"></span>
-        {% endfor %}
-        {{ content.field_style }}
-        {{ content.field_caliber_type }}
-        {{ content.field_price_range }}
-        {# content.like_and_dislike #}
+<a href="{{ url }}">
+  <div class="card watch is-flex is-flex-direction-column">
+    <div class="is-flex is-justify-content-space-between">
+      <div class="px-4 pt-4 pb-1 has-text-left heading has-text-primary is-align-self-flex-start">
+        <p class="m-0">{{ content.field_brand }}</p>
+        <h2 class="title is-size-5 watch-title">{{ label }}</h2>
+      </div>
+      <div class="px-4 pt-4 pb-1 has-text-left heading is-align-self-flex-start">
+        <figure class="image is-32x32">
+          {% if brand_logo_icon %}
+            {{ brand_logo_icon }}
+          {% endif %}
+        </figure>
       </div>
     </div>
-    <div class="px-4 text-align-center watch-ref">
-      <span class="heading-like">{{ "Reference" | t }}: {{ content.field_reference }}</span>
+    <div class="card-image">
+      <figure class="image">
+        {{ content.field_watch_front }}
+      </figure>
+    </div>
+    <div class="is-flex is-flex-direction-column is-flex-grow-1">
+      <div class="card-content mx-4 my-2 p-0 text-align-center watch-size">
+        <span class="heading-like">{{ "Width" | t }} : {{ content.field_diameter }}</span>
+        <span class="heading-like">- {{ "Thickness" | t }} : {{ content.field_thickness }}</span>
+      </div>
+      <div class="card-content mx-4 my-1 p-4 watch-features is-flex-grow-1">
+        <div class="is-flex is-flex-wrap-wrap">
+          {{ content.field_dial_color }}
+          {% for material in materials %}
+            <span class="chip mr-2 mb-2 {{ material.machineName }}"></span>
+          {% endfor %}
+          {{ content.field_style }}
+          {{ content.field_caliber_type }}
+          {{ content.field_price_range }}
+          {# content.like_and_dislike #}
+        </div>
+      </div>
+      <div class="px-4 text-align-center watch-ref">
+        <span class="heading-like">{{ "Reference" | t }}: {{ content.field_reference }}</span>
+      </div>
     </div>
   </div>
-</div>
+</a>

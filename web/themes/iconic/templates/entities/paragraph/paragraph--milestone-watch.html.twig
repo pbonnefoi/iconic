@@ -39,14 +39,14 @@
  */
 #}
 {% block paragraph %}
-  <div class="section py-5 px-0">
-    <div class="container has-background-black">
+  <div class="section py-5 px-0 has-background-white">
+    <div class="container">
         {% block content %}
           <div class="columns is-vcentered is-desktop">
             {% if paragraph.field_invert_image_text.value %}
               <div class="column">
-                <div class="content is-large has-text-white text-align-center pb-6">
-                  <div class="is-size-0 is-family-secondary is-bold pb-3 stroke">{{ content.field_title }}</div>
+                <div class="content is-large has-text-black text-align-center pb-6">
+                  <div class="is-size-0 is-family-secondary is-bold pb-3">{{ content.field_title }}</div>
                   {{ content.field_text }}
                 </div>
               </div>
@@ -58,8 +58,8 @@
                 {{ content.field_watch }}
               </div>
               <div class="column">
-                <div class="content is-large has-text-white text-align-center pb-6">
-                  <div class="is-size-0 is-family-secondary is-bold pb-3 stroke">{{ content.field_title }}</div>
+                <div class="content is-large has-text-black text-align-center pb-6">
+                  <div class="is-size-0 is-family-secondary is-bold pb-3">{{ content.field_title }}</div>
                   {{ content.field_text }}
                 </div>
               </div>
