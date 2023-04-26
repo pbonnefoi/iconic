@@ -37,22 +37,19 @@
  * @see template_preprocess_field()
  */
 #}
-<div class="is-flex is-align-items-center">
-  <span class="heading is-size-6 pr-2">{{ label }} : </span>
-  {% for item in items %}
-    <span class="capsule icon-text has-text-grey-dark mr-2 mb-2 is-flex is-align-items-center">
-      <span class="icon is-medium">
-        {% if item.key == 'women' %}
-          <i class="far fa-venus"></i>
-        {% elseif item.key == 'unisex' %}
-          <i class="fas fa-venus-mars"></i>
-        {% else %}
-          <i class="fas fa-mars"></i>
-        {% endif %}
-      </span>
-      <span class="heading-like is-size-6">
-        {{ item.content }}
-      </span>
+{% for item in items %}
+  <span class="capsule icon-text has-text-grey-dark mr-2 mb-2 is-flex is-align-items-center flex-wrap">
+    <span class="icon is-medium">
+      {% if item.key == 'women' %}
+        <i class="fas fa-venus"></i>
+      {% elseif item.key == 'unisex' %}
+        <i class="fas fa-venus-mars"></i>
+      {% else %}
+        <i class="fas fa-mars"></i>
+      {% endif %}
     </span>
-  {% endfor %}
-</div>
+    <span class="heading-like is-size-5">
+      {{ item.content }}
+    </span>
+  </span>
+{% endfor %}

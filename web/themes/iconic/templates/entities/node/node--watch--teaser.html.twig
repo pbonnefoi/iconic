@@ -68,13 +68,20 @@
  */
 #}
 <a href="{{ url }}">
-  <div class="card watch is-flex is-flex-direction-column">
+  <div class="card watch is-flex is-flex-direction-column {{ node.field_genre.value }}">
     <div class="is-flex is-justify-content-space-between">
       <div class="px-4 pt-4 pb-1 has-text-left heading has-text-primary is-align-self-flex-start">
         <p class="m-0">{{ content.field_brand }}</p>
         <h2 class="title is-size-5 watch-title">{{ label }}</h2>
       </div>
-      <div class="px-4 pt-4 pb-1 has-text-left heading is-align-self-flex-start">
+      <div class="px-4 pt-4 pb-1 has-text-left heading is-align-self-flex-start is-flex is-flex-direction-row">
+        <figure class="image is-32x32 mr-2">
+          {% if node.field_milestone.value %}
+            <span class="chip icon is-medium has-background-white">
+              <i class="fa-solid fa-diamond fa-lg"></i>
+            </span>
+          {% endif %}
+        </figure>
         <figure class="image is-32x32">
           {% if brand_logo_icon %}
             {{ brand_logo_icon }}
@@ -99,6 +106,7 @@
             <span class="chip mr-2 mb-2 {{ material.machineName }}"></span>
           {% endfor %}
           {{ content.field_style }}
+          {{ content.field_genre }}
           {{ content.field_caliber_type }}
           {{ content.field_price_range }}
           {# content.like_and_dislike #}

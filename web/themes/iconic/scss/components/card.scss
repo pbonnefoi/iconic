@@ -9,7 +9,7 @@
   transform: scaleX(1);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  aspect-ratio: 2/3;
+  aspect-ratio: 1/1.8;
   &.instant {
     border-radius: 0.7rem;
     .title {
@@ -100,6 +100,10 @@
   &.watch {
     background-color: #bebebe;
     background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #bebebe 4px ), repeating-linear-gradient( #ffffff55, #ffffff );
+    &.women {
+      background-color: mistyrose;
+      background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, mistyrose 4px ), repeating-linear-gradient( #ffffff55, #ffffff );
+    }
     .card-content {
       background-color: $white;
       border-radius: 0.5rem;
@@ -128,7 +132,19 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@include tablet-only {
+  .card {
+    aspect-ratio: 2/3.6;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .card {
+    aspect-ratio: 3/4.7;
+  }
+}
+
+@media screen and (min-width: $tablet) {
   .card {
     &.watch {
       .card-content {

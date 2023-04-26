@@ -1,13 +1,13 @@
 iconic.mobile:
   label: Mobile
-  mediaQuery: 'all and (max-width: 768px)'
+  mediaQuery: 'all and (max-width: 600px)'
   weight: 0
   multipliers:
     - 1x
     - 2x
 iconic.tablet:
   label: Tablet
-  mediaQuery: 'all and (min-width: 769px) and (max-width: 1023px)'
+  mediaQuery: 'all and (min-width: 601px) and (max-width: 1023px)'
   weight: 1
   multipliers:
     - 1x

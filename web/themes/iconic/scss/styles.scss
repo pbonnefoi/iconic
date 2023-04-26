@@ -16,15 +16,6 @@
 .px-xl {
   padding: 0 3rem;
 }
-@media screen and (min-width: 1024px) {
-  .mx-xl {
-    margin: 0 15rem;
-  }
-
-  .px-xl {
-    padding: 0 15rem;
-  }
-}
 
 .is-size-0 {
   font-size: 6rem;
@@ -110,12 +101,17 @@ a {
   overflow: hidden;
 }
 
-@media screen and (min-width: 1024px) {
-  padding: 3rem 3rem !important;
-}
-
 /* Image Hover Effect */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
+  .mx-xl {
+    margin: 0 15rem;
+  }
+
+  .px-xl {
+    padding: 0 15rem;
+  }
+
+  padding: 3rem 3rem !important;
   .image-hover-effect figure figcaption::before,
   .image-hover-effect figure figcaption::after {
     pointer-events: none;

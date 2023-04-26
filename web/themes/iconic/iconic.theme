@@ -94,6 +94,10 @@ function iconic_preprocess_field(&$vars) {
       }
     }
   }
+  elseif ($vars['field_name'] == 'field_genre') {
+    $key = $vars['element']['#items']->value;
+    $vars['items'][0]['key'] = $key;
+  }
 }
 
 /**
