@@ -67,31 +67,27 @@
  *
  */
 #}
-<div class="section py-3">
-  <div class="container">
-    <article>
-      <div class="heading">
-        <p class="subtitle is-3">{{ 'Worn by' }}</p>
-        <h2 class="title is-1 is-spaced">{{ label }}</h2>
-      </div>
-      <div class="content is-large">
-        <p>{{ content.field_description }}</p>
-      </div>
-      <div class="columns is-variable is-6 mb-6 mt-5">
-        <div class="column py-0 is-one-third">
-          <div class="card article p-4">
-            <div class="card-image">
-              <figure class="image">
-                {{ content.field_cover }}
-              </figure>
-            </div>
-          </div>
+<article>
+  <div class="section py-5 px-0 has-background-white">
+    <div class="container">
+      <div class="columns is-vcentered is-desktop">
+        <div class="column p-5">
+          {{ content.field_cover }}
         </div>
-        <div class="column py-0 is-one-third">
+        <div class="column p-5">
           {{ content.field_watch }}
         </div>
       </div>
-      {{ content.field_modules }}
-    </article>
+    </div>
   </div>
-</div>
+  <div class="section pt-6 pb-4">
+    <div class="container is-max-desktop">
+      <div class="content is-large">
+        <p class="subtitle is-3">{{ content.field_article_category }}</p>
+        <h2 class="title is-2 heading">{{ label }}</h2>
+        <p>{{ content.field_description }}</p>
+      </div>
+      {{ content.field_modules }}
+    </div>
+  </div>
+</article>

@@ -39,7 +39,9 @@
         "drupal/gin": "^3.0@RC",
         "drupal/gin_toolbar": "^1.0@RC",
         "drupal/google_analytics": "^4.0",
+        "drupal/google_tag": "^2.0",
         "drupal/http_cache_control": "^2.0",
+        "drupal/linkit": "^6.1@RC",
         "drupal/metatag": "^1.19",
         "drupal/next": "^1.0",
         "drupal/paragraphs": "^1.12",
@@ -50,6 +52,7 @@
         "drupal/seven": "^1.0@alpha",
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/votingapi": "^3.0@dev",
+        "drupal/yearonly": "^9.1",
         "drush/drush": "^11.0"
     },
     "conflict": {
@@ -72,9 +75,6 @@
         "patches": {
           "drupal/subrequests": {
             "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
-          },
-          "drupal/core": {
-            "Call to a member function transformDimensions() on null in template_preprocess": "https://www.drupal.org/files/issues/2022-07-28/2957368-40.patch"
           }
         },
         "drupal-scaffold": {

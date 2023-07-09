@@ -67,52 +67,22 @@
  *
  */
 #}
-<article class="watch-full">
-  <div class="section pt-0 pb-5 px-0 has-background-white">
+<a href="{{ url }}">
+  <div class="section py-5 px-0 has-background-white">
     <div class="container">
       {% block content %}
-        <div class="columns is-desktop is-centered p-0 m-0">
-          <div class="column is-2 p-0 m-0">
-            <div class="brand-logo">{{ content.field_brand }}</div>
-          </div>
-        </div>
-        <div class="columns is-desktop pb-6">
-          <div class="column px-6">
-            {{ content.field_watch_front }}
-          </div>
-          <div class="column px-6">
-            <div class="content">
-              <h2 class="title is-size-2">{{ label }}</h2>
-              <div class="title is-size-4">{{ content.field_reference }}</div>
-              <div class="my-1 watch-features">
-                <div class="is-flex is-align-items-center mb-2"><span class="heading is-size-6">{{ "Width" | t }} : {{ content.field_diameter }}</div>
-                <div class="is-flex is-align-items-center mb-2"><span class="heading is-size-6">{{ "Thickness" | t }} : {{ content.field_thickness }}</div>
-                {{ content.field_waterproofing }}
-                <div class="is-flex is-align-items-center"><span class="heading is-size-6 pr-2">{{ "Dial color" | t }} : </span>{{ content.field_dial_color }}</div>
-                {% for material in materials %}
-                  <div class="is-flex is-align-items-center"><span class="heading is-size-6 pr-2">{{ "Material(s)" | t }} : {{ material.name }}</span> <span class="chip mr-2 mb-2 {{ material.machineName }}"></span></div>
-                {% endfor %}
-                {{ content.field_style }}
-                {{ content.field_genre }}
-                {{ content.field_caliber_type }}
-                {{ content.field_calibre }}
-                {{ content.field_price_range }}
-                {# content.like_and_dislike #}
-              </div>
+        <div class="columns is-vcentered is-desktop">
+          <div class="column">
+            <div class="content is-large has-text-black text-align-center pb-6">
+              <div class="is-size-0 is-family-secondary is-bold pb-3">{{ content.field_birth_year }}</div>
+              {{ content.field_milestone_text }}
             </div>
+          </div>
+          <div class="column p-4">
+            {{ content.field_watch_front }}
           </div>
         </div>
       {% endblock %}
     </div>
   </div>
-  <div class="section pt-6 pb-4">
-    <div class="container is-max-desktop">
-      <div class="content is-large">
-        <p class="has-text-weight-bold">{{ content.field_description }}</p>
-      </div>
-    </div>
-  </div>
-
-  {{ content.field_modules }}
-
-</article>
+</a>

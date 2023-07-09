@@ -21,4 +21,9 @@
       </div>
     {% endif %}
   </div>
+  {% if content.field_legend %}
+    <p class="caption">
+      {{ content.field_legend }}
+    </p>
+  {% endif %}
 {% endif %}

@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <figure class="image radius has-shadow">
+    <div class="media-image">
+      {{ content.field_media_image }}
+      {% if media.field_credits.value %}
+        <div class="credits has-text-grey-light">
+          © {{ content.field_credits }}
+        </div>
+      {% endif %}
+    </div>
+  </figure>
+  {% if content.field_legend %}
+    <div class="caption pt-3 pb-2 px-2 is-italic">
+      {{ content.field_legend }}
+    </div>
+  {% endif %}
+{% endif %}
